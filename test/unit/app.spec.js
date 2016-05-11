@@ -10,7 +10,7 @@ describe('app', function () {
             });
         });
         it('should assign person between the ages of 12 - 17 to teens group', function () {
-            expect(app.assignToSwimmingCourse('John', '07/10/2001')).toEqual({
+            expect(app.assignToSwimmingCourse('Jack', '07/10/2001')).toEqual({
                 name: 'John', age: 14, course: 'teens'
             });
         });
@@ -18,7 +18,18 @@ describe('app', function () {
             expect(app.assignToSwimmingCourse('Zack', '10/06/2010')).toEqual({
                 name: 'Zack', age: 5, course: 'kids'
             });
+            expect(app.assignToSwimmingCourse('Michael','12/05/2002')).toEqual({
+                name: 'Michael', age: 13, course:'teens'
+            });
         });
+
+    });
+
+    describe('calculateArea', function(){
+         it('should return false if some of arguments are incorrect', function(){
+                     expect(app.calculateArea("aaa", 2, 1, "aa", "aaa")).toEqual(false);
+         });
+
     });
 });
 
